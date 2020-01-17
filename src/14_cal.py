@@ -22,3 +22,27 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+print(datetime.now().strftime('%B'))
+
+user_input = input('What month and year? Please separate with comma.')
+listed_input = user_input.split(' ')
+
+
+def input_handler(*input):
+    # check for no input
+    if input[0] == '' and len(input) > 0:
+        # print out current month
+        calendar.prmonth(datetime.now().year, datetime.now().month)
+    # check for month input only
+    elif len(input) == 1:
+        # print out requested month (int)
+        calendar.prmonth(datetime.now().year, int(input[0]))
+    # check for month and year input
+    elif len(input) == 2:
+        # print requested month in requested year
+        calendar.prmonth(int(input[1]), int(input[0]))
+    else:
+        print('Please enter a valid input. [month as integer 1-12] [year]')
+
+input_handler(*listed_input)

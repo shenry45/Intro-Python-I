@@ -13,10 +13,12 @@ for arg in sys.argv:
     print(arg)
 
 # Print out the OS platform you're using:
-print('OS platforms ' + str(sys.getwindowsversion()[3]))
+print(sys.platform)
+# print('OS platforms ' + str(sys.getwindowsversion()[3]))
 
 # Print out the version of Python you're using:
-print(f'Version {sys.version_info[0]}.{sys.version_info[1]}.{sys.version_info[2]}')
+print(sys.version)
+# print(f'Version {sys.version_info[0]}.{sys.version_info[1]}.{sys.version_info[2]}')
 
 
 import os
